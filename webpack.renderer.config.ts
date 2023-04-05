@@ -4,8 +4,14 @@ import { rules } from './webpack.rules';
 import { plugins } from './webpack.plugins';
 
 rules.push({
-  test: /\.css$/,
-  use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
+  test: /\.s?css$/,
+  //use only postcss-loader to process css
+  use: [
+		{ loader: "style-loader" },
+		{ loader: "css-loader" },
+		{ loader: "postcss-loader" },
+	],
+  // use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
 });
 
 export const rendererConfig: Configuration = {
