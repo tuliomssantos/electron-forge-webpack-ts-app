@@ -1,7 +1,13 @@
 import * as ReactDOM from "react-dom";
 
+import Router from './router'
+
+function App () {
+    return <Router />;
+}
+
 function render() {
-  ReactDOM.render(<h2>Electron App</h2>, document.body);
+  ReactDOM.render(<App />, document.body);
 }
 
 render();
